@@ -1,0 +1,28 @@
+{
+  "name": "extas/generators",
+  "installer_version": 3,
+  "package_classes": [
+    {
+      "interface": "generatorRepository",
+      "class": "extas\\components\\generators\\GeneratorRepository"
+    }
+  ],
+  "plugins": [
+    {
+      "class": "extas\\components\\plugins\\init\\InitGenerators",
+      "stage": "extas.init.section.generators"
+    },
+    {
+      "class": "extas\\components\\plugins\\uninstall\\UninstallGenerators",
+      "stage": "extas.uninstall.section.generators"
+    }
+  ],
+  "extensions": [
+    {
+      "class": "extas\\components\\extensions\\ExtensionRepositoryGet",
+      "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryGet",
+      "subject": "*",
+      "methods": ["generatorRepository"]
+    }
+  ]
+}
