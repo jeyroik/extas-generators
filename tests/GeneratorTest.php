@@ -41,7 +41,7 @@ class GeneratorTest extends TestCase
         $this->unregisterSnuffRepos();
     }
 
-    public function testGenerateByPluginInstallDefault()
+    public function testBasicLogic()
     {
         $this->createSnuffPlugin(PluginEmpty::class, [
             IStageGenerateBefore::NAME . '.test',
